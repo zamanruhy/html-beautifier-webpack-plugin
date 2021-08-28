@@ -1,7 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const beautify = require('js-beautify').html
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const beautify = require("js-beautify").html;
 
-class HtmlPrettifyPlugin {
+class HtmlBeautifierPlugin {
   constructor(options = {}) {
     this.options = {
       ...options,
@@ -11,7 +11,7 @@ class HtmlPrettifyPlugin {
         indent_inner_html: true,
         preserve_newlines: true,
         max_preserve_newlines: 0,
-        wrap_line_length: 0,
+        wrap_line_length: 120,
         extra_liners: [],
         ...options.html,
         js: {
@@ -19,28 +19,28 @@ class HtmlPrettifyPlugin {
           preserve_newlines: true,
           max_preserve_newlines: 2,
           space_after_anon_function: true,
-          ...(options.html && options.html.js)
+          ...(options.html && options.html.js),
         },
         css: {
           end_with_newline: false,
           preserve_newlines: false,
           newline_between_rules: false,
-          ...(options.html && options.html.css)
-        }
-      }
-    }
+          ...(options.html && options.html.css),
+        },
+      },
+    };
   }
   apply(compiler) {
-    compiler.hooks.compilation.tap('HtmlPrettifyPlugin', (compilation) => {
+    compiler.hooks.compilation.tap("HtmlBeautifierPlugin", (compilation) => {
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
-        'HtmlPrettifyPlugin',
+        "HtmlBeautifierPlugin",
         (data, callback) => {
-          data.html = beautify(data.html, this.options)
-          callback(null, data)
+          data.html = beautify(data.html, this.options);
+          callback(null, data);
         }
-      )
-    })
+      );
+    });
   }
 }
 
-module.exports = HtmlPrettifyPlugin
+module.exports = HtmlBeautifierPlugin;

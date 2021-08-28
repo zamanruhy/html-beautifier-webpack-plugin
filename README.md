@@ -1,31 +1,31 @@
-# html-prettify-webpack-plugin
-Prettify output of [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
+# html-beautifier-webpack-plugin
 
-Installation
-------------
+Beautify output of [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
+
+## Installation
+
 Install the plugin with npm:
+
 ```shell
-$ npm i -D html-prettify-webpack-plugin
+$ npm i -D html-beautifier-webpack-plugin
 ```
 
-Usage
------------
-
+## Usage
 
 ```javascript
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlPrettifyPlugin = require('html-prettify-webpack-plugin');
+const HtmlBeautifierPlugin = require('html-beautifier-webpack-plugin');
 
 plugins: [
     new HtmlWebpackPlugin()
-    new HtmlPrettifyPlugin()
+    new HtmlBeautifierPlugin()
 ]
 ```
 
-Configuration
--------------
+## Configuration
+
 You can pass a configuration options which is [js-beautify](https://github.com/beautify-web/js-beautify)'s options.
-Default options for this package (but not for js-beautify):
+Default options for this package:
 
 ```javascript
 {
@@ -35,7 +35,7 @@ Default options for this package (but not for js-beautify):
     indent_inner_html: true,
     preserve_newlines: true,
     max_preserve_newlines: 0,
-    wrap_line_length: 0,
+    wrap_line_length: 120,
     extra_liners: [],
     js: {
       end_with_newline: false,
