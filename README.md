@@ -29,7 +29,7 @@ You can pass a configuration options which is
 [js-beautify](https://github.com/beautify-web/js-beautify)'s options. Default
 options for this package:
 
-```javascript
+```js
 {
   html: {
     indent_size: 2,
