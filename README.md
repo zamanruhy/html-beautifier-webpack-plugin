@@ -1,6 +1,7 @@
 # html-beautifier-webpack-plugin
 
-Beautify output of [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
+Beautify output of
+[HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
 
 ## Installation
 
@@ -24,8 +25,9 @@ plugins: [
 
 ## Configuration
 
-You can pass a configuration options which is [js-beautify](https://github.com/beautify-web/js-beautify)'s options.
-Default options for this package:
+You can pass a configuration options which is
+[js-beautify](https://github.com/beautify-web/js-beautify)'s options. Default
+options for this package:
 
 ```javascript
 {
