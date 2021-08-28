@@ -14,8 +14,7 @@
     "webpack",
     "html",
     "beautify",
-    "beautifier",
-    "HtmlWebpackPlugin"
+    "html-webpack-plugin"
   ],
   "author": "Ruslan Shakirov",
   "license": "MIT",
