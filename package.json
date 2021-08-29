@@ -1,6 +1,6 @@
 {
   "name": "html-beautifier-webpack-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Beautify output of HtmlWebpackPlugin",
   "main": "index.js",
   "scripts": {
